@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: #d3e9fc;
+}
+
+.card_type_img {
+  height: 80%;
+  width: 100px;
+}
+
+.card_type_img img {
+  width: inherit;
+  height: inherit;
+}
+
+.card_entry label {
+  letter-spacing: 1px;
+  font-family: "Roboto Mono", monospace;
+}
+
+label {
+  font-size: 14px;
+}
+
+label,
+h6,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.card_detail,
+.card_entry {
+  position: absolute;
+  border-radius: 15px;
+  left: 50%;
+}
+
+.card_rotate {
+  z-index: 999;
+}
+
+.card_detail {
+  top: 50%;
+  /* z-index: -1; */
+  background: #fefdfe;
+  height: 500px;
+  width: 580px;
+  transform: translate(-50%, -40%);
+}
+
+.card_detail .card_data {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card_entry {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  top: 25%;
+  z-index: 9999;
+  height: 280px;
+  width: 470px;
+  transform: translate(-50%, 30%);
+}
+
+.chip {
+  transform: scale(0.8);
+}
+
+.card_display_detail {
+  position: absolute;
+  bottom: 20%;
+}
+
+.card_strip {
+  height: 55px;
+  background-color: #000;
+  margin-top: 25px;
+}
+
+.card_animation {
+  animation: card-img 0.4s linear;
+}
+
+@keyframes card-img {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
