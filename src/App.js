@@ -19,46 +19,29 @@ const Card = ({ cardNumber }) => {
     if (cardNumber.startsWith("51")) {
       setActiveCard("mastercard");
       return;
-      // return (
-
-      // );
+      
     }
     if (cardNumber.startsWith("34")) {
       setActiveCard("americanexpress");
       return;
-      // return (
-      //   <img
-      //     src={mastercard}
-      //     alt="mastercard img "
-      //     className="card_animation"
-      //   />
-      // );
+      
     }
 
     if (cardNumber.startsWith("300")) {
       setActiveCard("dinersclub");
       return;
-      // return (
-      //   <img
-      //     src={americanexpress}
-      //     alt="americanexppress img "
-      //     className="card_animation"
-      //   />
-      // );
+      
     }
 
     if (cardNumber.startsWith("6011")) {
       setActiveCard("discover");
       return;
-      // return (
-      //   <img src={discover} alt="discover img " className="card_animation" />
-      // );
+      
     }
 
     if (cardNumber.startsWith("35")) {
       setActiveCard("jcb");
       return;
-      // return <img src={jcb} alt="jcb img " className="card_animation" />;
     }
     setActiveCard(null);
   }, [cardNumber]);
