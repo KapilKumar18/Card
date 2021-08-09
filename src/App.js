@@ -19,24 +19,20 @@ const Card = ({ cardNumber }) => {
     if (cardNumber.startsWith("51")) {
       setActiveCard("mastercard");
       return;
-      
     }
     if (cardNumber.startsWith("34")) {
       setActiveCard("americanexpress");
       return;
-      
     }
 
     if (cardNumber.startsWith("300")) {
       setActiveCard("dinersclub");
       return;
-      
     }
 
     if (cardNumber.startsWith("6011")) {
       setActiveCard("discover");
       return;
-      
     }
 
     if (cardNumber.startsWith("35")) {
@@ -148,7 +144,7 @@ const App = () => {
                 </div>
                 {/* <div className="p-1"> */}
                 <div
-                  className={`p-1 ${
+                  className={`p-2 ${
                     activeState.id === "cardExpMonth" ||
                     activeState.id === "cardExpYear"
                       ? "border rounded border-white"
@@ -158,12 +154,14 @@ const App = () => {
                   <label>Expires</label>
                   <div className="d-flex justify-content-center">
                     <h6>
-                      {cardExpireMonth.length > 0
+                      {cardExpireMonth.length > 0 &&
+                      cardExpireMonth >= new Date().getMonth() + 1
                         ? cardExpireMonth + "/"
                         : "MM/"}
                     </h6>
                     <h6>
-                      {cardExpireYear.length > 0
+                      {cardExpireYear.length > 0 &&
+                      cardExpireYear.slice(2, 4) >= Date().slice(13, 15)
                         ? cardExpireYear.slice(2, 4)
                         : "YY"}
                     </h6>
@@ -193,24 +191,7 @@ const App = () => {
                 <span></span>
 
                 <div className="card_type_img my-2">
-                  {cardNumber[0] === "5" && cardNumber[1] === "1" ? (
-                    <img src={mastercard} alt="mastercard img " />
-                  ) : cardNumber[0] === "3" && cardNumber[1] === "4" ? (
-                    <img src={americanexpress} alt="americanexpress img " />
-                  ) : cardNumber[0] === "3" &&
-                    cardNumber[1] === "0" &&
-                    cardNumber[2] === "0" ? (
-                    <img src={dinersclub} alt="dinersclub img " />
-                  ) : cardNumber[0] === "6" &&
-                    cardNumber[1] === "0" &&
-                    cardNumber[2] === "1" &&
-                    cardNumber[3] === "1" ? (
-                    <img src={discover} alt="discover img " />
-                  ) : cardNumber[0] === "3" && cardNumber[1] === "5" ? (
-                    <img src={jcb} alt="jcb img " />
-                  ) : (
-                    <img src={visa} alt="visa img " />
-                  )}
+                  <Card cardNumber={cardNumber} />
                 </div>
               </div>
             </div>
@@ -307,6 +288,7 @@ const App = () => {
                     }}
                   >
                     <option>YY</option>
+                    <option>2020</option>
                     <option>2021</option>
                     <option>2022</option>
                     <option>2023</option>
