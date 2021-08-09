@@ -98,9 +98,9 @@ h5 {
 }
 
 .letterspace {
-  padding: 0 30px;
+  padding: 0 30px 0 0;
   letter-spacing: 4px;
-  word-spacing: 20px;
+  word-spacing: 25px;
 }
 
 .card_animation {
