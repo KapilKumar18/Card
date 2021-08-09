@@ -97,6 +97,12 @@ h5 {
   margin-top: 25px;
 }
 
+.letterspace {
+  padding: 0 30px;
+  letter-spacing: 4px;
+  word-spacing: 20px;
+}
+
 .card_animation {
   animation: card-img 0.4s linear;
 }
