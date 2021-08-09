@@ -98,7 +98,7 @@ const App = () => {
       <div className="card_rotate">
         <ReactCardFlip
           containerStyle={{ position: "relative" }}
-          cardZIndex="9999"
+          cardZIndex="1"
           isFlipped={isFlipped}
           flipDirection="horizontal"
         >
@@ -122,7 +122,7 @@ const App = () => {
                     : ""
                 }`}
               >
-                <h5>
+                <h5 className="letterspace">
                   {cardNumber.length > 0
                     ? displayCardNumber
                     : "#### #### #### ####"}
